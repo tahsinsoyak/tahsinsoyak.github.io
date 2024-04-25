@@ -1,16 +1,4 @@
 
-const displayList = () => {
-    const navUl = document.querySelector('nav ul');
-    if (btnHamburger.classList.contains('fa-bars')) {
-        btnHamburger.classList.remove('fa-bars');
-        btnHamburger.classList.add('fa-times');
-        navUl.classList.add('display-nav-list');
-    } else {
-        btnHamburger.classList.remove('fa-times');
-        btnHamburger.classList.add('fa-bars');
-        navUl.classList.remove('display-nav-list');
-    }
-};
 
 const scrollUp = () => {
     const btnScrollUp = document.querySelector('.scroll-up');
@@ -44,6 +32,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
+    const toggleButton = document.querySelector(".fa-bars");
+    const navMenu = document.querySelector("nav ul");
+
+    toggleButton.addEventListener("click", function () {
+        navMenu.classList.toggle("display-nav-list");
+    });
+
     // Event listener for theme toggle button
     btnTheme.addEventListener("click", toggleTheme);
 
@@ -56,3 +51,4 @@ document.addEventListener("DOMContentLoaded", function () {
         btnTheme.classList.add("fa-moon"); // Add moon icon
     }
 });
+
